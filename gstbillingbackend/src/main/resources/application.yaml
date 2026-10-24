@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: gstbillingbackend
+  profiles:
+    active: pg
+
+  # GMail Properties
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 'supriyakittur31@gmail.com'
+    password: ${EMAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  #MultiPart files Configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 3KB
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000    # A Day in MilliSeconds
+
+# Logging level
+logging:
+  level:
+    root: INFO
+    com.fullstack: DEBUG
